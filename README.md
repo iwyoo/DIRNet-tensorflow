@@ -8,7 +8,7 @@ Tensorflow implementation of DIRNet
 # Training
 python train.py
 ```
-Intermediate results and model checkpoint can be found in ```tmp``` or ```ckpt```.
+Intermediate results and model checkpoint can be found in ```tmp``` and ```ckpt``` each.
 
 ```
 # Evaluation
