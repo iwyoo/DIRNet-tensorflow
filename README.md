@@ -10,11 +10,11 @@ python train.py
 ```
 Intermediate results and model checkpoint can be found in ```tmp``` / ```ckpt```.
 
-# Evalutation
 ```
+# Evaluation
 python deploy.py 
 ```
-Evaluation results can be found in ```result```
+Evaluation results can be found in ```result```.
 
 ## References
 - [End-to-End Unsupervised Deformable Image Registration with a Convolutional Neural Network](https://arxiv.org/abs/1704.06065)
