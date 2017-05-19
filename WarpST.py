@@ -103,12 +103,12 @@ def WarpST(U, V, out_size, name='DeformableTransformer', **kwargs):
             grid = tf.concat([x_t_flat, y_t_flat], 0)
             return grid
 
-    def _transform(V, input_dim, out_size):
+    def _transform(V, U, out_size):
         with tf.variable_scope('_transform'):
-            num_batch = tf.shape(input_dim)[0]
-            height = tf.shape(input_dim)[1]
-            width = tf.shape(input_dim)[2]
-            num_channels = tf.shape(input_dim)[3]
+            num_batch = tf.shape(U)[0]
+            height = tf.shape(U)[1]
+            width = tf.shape(U)[2]
+            num_channels = tf.shape(U)[3]
 
             # grid of (x_t, y_t, 1), eq (1) in ref [1]
             height_f = tf.cast(height, 'float32')
@@ -132,7 +132,7 @@ def WarpST(U, V, out_size, name='DeformableTransformer', **kwargs):
             y_s_flat = tf.reshape(y_s, [-1])
 
             input_transformed = _interpolate(
-                input_dim, x_s_flat, y_s_flat, out_size)
+                U, x_s_flat, y_s_flat, out_size)
 
             output = tf.reshape(
                 input_transformed, 
