@@ -4,9 +4,6 @@ from config import get_config
 from data import MNISTDataHandler
 from ops import mkdir
 
-import os
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
-
 def main():
   sess = tf.Session()
   config = get_config(is_train=False)
