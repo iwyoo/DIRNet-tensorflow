@@ -1,5 +1,6 @@
 # DIRNet-tensorflow
 Tensorflow implementation of DIRNet
+- <b>[CAUTION] This implementation is actually different from the original paper. This implementation uses a simple bicubic interpolation not cubic spline interpolation. They can be different in details. If you want to more precise experiments, you need to change the codes. </b>
 
 ![alt tag](misc/DIRNet.png)
 
