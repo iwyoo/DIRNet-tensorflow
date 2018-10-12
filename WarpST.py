@@ -120,7 +120,7 @@ def WarpST(U, V, out_size, name='DeformableTransformer', **kwargs):
             grid = tf.tile(grid, tf.stack([num_batch]))           # [n*2*h*w]
             grid = tf.reshape(grid, tf.stack([num_batch, 2, -1])) # [n, 2, h*w]
 
-            # transform (x, y)^T -> (x+vx, x+vy)^T
+            # Set source position (x+vx, y+vy)^T
             V = bicubic_interp_2d(V, out_size)
             V = tf.transpose(V, [0, 3, 1, 2])           # [n, 2, h, w]
             V = tf.reshape(V, [num_batch, 2, -1])       # [n, 2, h*w]
